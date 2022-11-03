@@ -13,8 +13,16 @@
       <td>{{ item.lastname }}</td>
       <td>{{ item.city }}</td>
       <td>{{ item.number }}</td>
-      <td><button>delete</button></td>
-      <td><button>details</button></td>
+      <td>
+        <button (click)="removeItem(item)" class="btn btn-danger btn-sm mx-1">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </td>
+      <td>
+        <button (click)="showItem(item)" class="btn btn-warning btn-sm mx-1">
+          <i class="bi bi-card-heading"></i>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

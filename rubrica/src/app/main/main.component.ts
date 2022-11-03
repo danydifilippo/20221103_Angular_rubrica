@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contatto } from '../classes/contatto';
+
 
 @Component({
   selector: 'app-main',
@@ -9,30 +11,24 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainComponent implements OnInit {
 
-lista = [
-    {
-      name: 'Nicola',
-      lastname: 'Lerra',
-      city: 'New York',
-      number: '393345678901'
-    },
-    {
-      name: 'Bruno',
-      lastname: 'Stano',
-      city: 'Londra',
-      number: '393687678901'
-    },
-    {
-      name: 'Giovanni',
-      lastname: 'Urso',
-      city: 'Napoli',
-      number: '393680988901'
-    }
-  ];
+infoContact?: Contatto;
+
+lista: Contatto[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onInsert(contact:Contatto){
+    this.lista.push(contact)
+  }
+
+  onRemoveItem(contact:Contatto){
+    this.lista = this.lista.filter(c => c.number !== contact.number)
+  }
+
+  onShowItem(contact:Contatto){
+    this.infoContact = contact
+  }
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Contatto } from 'src/app/classes/contatto';
 
 @Component({
   selector: 'app-input',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
+  newContact : Contatto = new Contatto();
+
+  @Output() insertItem = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  insert(){
+    this.insertItem.emit(this.newContact)
+    this.newContact = new Contatto()
   }
 
 }

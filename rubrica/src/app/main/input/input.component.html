@@ -1,10 +1,31 @@
-<div class="input-group">
-  <span class="input-group-text">Nome e Cognome</span>
-  <input type="text" aria-label="First name" class="form-control" />
-  <input type="text" aria-label="Last name" class="form-control" />
-  <span class="input-group-text">Città</span>
-  <input type="text" aria-label="First name" class="form-control" />
-  <span class="input-group-text">Telefono</span>
-  <input type="text" aria-label="First name" class="form-control" />
+<div class="row">
+  <input
+    type="text"
+    [(ngModel)]="newContact.name"
+    aria-label="First name"
+    class="form-control col m-3 bg-info"
+    placeholder="Nome"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newContact.lastname"
+    aria-label="Last name"
+    class="form-control col m-3 bg-info"
+    placeholder="Cognome"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newContact.city"
+    aria-label="city"
+    class="form-control col m-3 bg-info"
+    placeholder="Città"
+  />
+  <input
+    type="text"
+    [(ngModel)]="newContact.number"
+    aria-label="numero"
+    class="form-control col m-3 bg-info"
+    (keyup.enter)="insert()"
+    placeholder="Telefono"
+  />
 </div>
-<button>inserisci</button>

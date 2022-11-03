@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { InputComponent } from './main/input/input.component';
 import { ListComponent } from './main/list/list.component';
 import { DetailsComponent } from './main/details/details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailsComponent } from './main/details/details.component';
     DetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
